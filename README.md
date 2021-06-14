@@ -2,4 +2,4 @@
 
 txt pelo git
 
-never show again
+git é dado para tornar um "arquivo" git
