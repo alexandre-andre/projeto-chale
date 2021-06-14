@@ -2,4 +2,4 @@
 
 Explicando projeto chalé.
 
-# Configurando o bo
+# Configundo o bo
