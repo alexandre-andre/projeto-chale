@@ -3,6 +3,9 @@
 Explicando projeto chalé.
 
 # Configurando o body
-margin
+margin 
 position
-relative:absolute
+relative
+
+topo: positon relative com widht em %
+topo2: position absolute com widht em px
