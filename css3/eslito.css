@@ -1,0 +1,210 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: "Trebuchet MS", helvetica, sans-serif;
+	background: #fff url(../imagens/bg.png);
+	margin: 15px;
+}
+/************************************/
+#container{
+	background: #ede9cc url(../imagens/bg-container.png) repeat-y top center;
+	margin: 0 auto;
+	min-width: 740px;	
+	max-width: 1180px;
+}
+
+#topo{
+	position: relative;
+	background: #dbcb87;
+	height: 15.4em;
+	min-height: 250px;
+}
+
+#area-logo{
+	position: absolute;
+	background: url(../imagens/topo-imagem-principal2.png) no-repeat;
+	width: 100%;
+	height: 230px;
+	top: 0;
+	left: 0;
+	z-index: 1;/*sobreposição*/
+}
+
+.logo a{
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	z-index: 3;
+	background: url(../imagens/logo.png) no-repeat;
+	width: 151px;
+	height: 66px;
+	text-indent: -3000px;/*para tirar o texto CHALÉ HOTEL da tela*/
+}
+
+#menu{
+	position: absolute;
+	background: url(../imagens/topo-imagem-lateral.png) no-repeat;
+	width: 450px;
+	height: 250px;
+	top: 0;
+	right: 0;
+	z-index: 2;/*sobreposição*/
+}
+
+#conteudo-menu{
+	margin-left: 90px;
+	margin-right: 15px;
+	padding-top: 15px;
+}
+
+#menu-locais a{
+	float: left;/*clean clonflicts*/
+	border-bottom: 1px solid #b5ab56;
+	border-top: 1px solid #b5ab56;
+	padding-top:  5px;
+	padding-bottom: 5px;
+	font-size: 0.8em;
+	color: #8b8448;
+	text-decoration: none;
+}
+
+#menu-locais a:hover{
+	color: #fdf6be;
+}
+
+#menu-locais a.reserva{
+	float: right;
+	color: #fff5b5 ;
+	background: #a29750;
+	text-transform: uppercase;
+	padding: 5px 10px;
+}
+/********MENU LATERAL e depoimento***************/
+#menu-lateral{
+	margin-top: 15px;
+}
+
+ul#navegacao{
+	list-style-type: none;
+	float: left;
+}
+
+ul#navegacao a{
+	text-decoration: none;
+	color: #6e672c;
+	text-transform: uppercase;
+	font-size: 0.8em;
+	padding: 5px;
+	line-height: 35px;
+}
+
+ul#navegacao a:hover{
+	background-color: #fdf6be; 
+}
+
+.depoimento{
+	width: 226px;
+	height: 164px;
+	float: right;
+}
+
+body.home #navegacao a#home,
+body.historia #navegacao a#historia,
+body.imprensa #navegacao a#imprensa,
+body.gastronomia #navegacao a#gastronomia,
+body.contato #navegacao a#contato{
+	background-color: #fdf6be; 
+}
+
+/*************AREA PRINCIPAL***********************/
+#area-principal{
+	float: left;
+	width: 50%;
+	background: url(../imagens/bg-area-principal.png) repeat-x top left;
+}
+
+.conteudo{
+	margin: 0 auto;
+	width: 90%;
+	padding: 20px;
+}
+
+h2{
+	font-size: 1.1em;
+	color: #7d7640;
+	padding-bottom: 10px;
+}
+
+p{
+	font-size: 1em;
+	margin-bottom: 10px;
+}
+
+/********AREA LATERAL***********************/
+#area-lateral{
+	float: right;
+	width: 50%;
+	background: url(../imagens/bg-area-lateral.png) repeat-x top left;
+}
+
+.conteudo{
+	margin: 0 auto;
+	width: 90%;
+	padding: 20px;
+}
+
+/*#lista-lateral .imagem-lateral{
+	float: left;
+	width: 138px;
+	border: 3px solid #fdf6be;
+}*/
+
+#lista-lateral li{
+	list-style-type: none;
+	padding: 8px;
+	border-bottom: 1px solid #f3efcb;
+	height: 6em;
+}
+
+#lista-lateral li a img{
+	float: left;
+	margin-right: 8px;
+}
+
+#lista-lateral a{
+	text-decoration: none;
+	font-size: 0.8em;
+}
+
+#lista-lateral li a p{
+	font-size: 0.8em;
+	color: #000;
+}
+
+#lista-lateral li a h3{
+	font-size: 1em;
+	color: #615b2d;
+	padding: 5px 0;
+	background: url(../imagens/ornamento.png) no-repeat center right;
+}
+
+#lista-lateral li:hover{
+	background: #f6f3d6;
+	cursor: pointer;
+}
+
+
+
+
+/***********RODAPE*************************/
+#rodape{
+	clear: both;
+	color: #7d7640;
+	background: url(../imagens/bg-rodape.png) repeat-x top left;
+	text-align: center;
+	padding: 16px;
+	line-height: 16px;
+}
