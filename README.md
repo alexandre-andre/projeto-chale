@@ -80,12 +80,16 @@ Daí posso lançar:
 --> git add <arquivo a ser commitado>
 Que será a segunda alteração feita no mesmo arquivo e lançada como outro commit.
 
--->git status
+```shell
+git status
+```
 Para verificar o arquivo
 
--->git commit -m <"...">
+`git commit -m <"...">`
 Para lançar o commit e seu título
 
--->git log 
+```
+git log
+```
 Para verificar o histórico de commits
          
