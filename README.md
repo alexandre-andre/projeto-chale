@@ -26,3 +26,19 @@ Volta para o commit tal e ignora -apaga- todos os commits após este
 
 git reset --soft <numero da log>
 Volta para o commit tal e todos os commits q fora mudados após este voltam para a área de standing
+
+# Como editar o título do último commit ? (antes do push)
+git commit --amend ...
+Daí só mudar o título do commit
+
+# Como editar o último commit ? (antes do push)
+git commit -ammed
+No final da vi usamos o comando (:wd) 
+
+Fazemos a alteração necessária no arquivo daí
+git add <nome do arquivo>
+git commit --amend 
+
+# Como sei que foi anexado a mudança ?
+git log - para ver o log do commit
+git show <log do commit> para mostrar a alteração 
