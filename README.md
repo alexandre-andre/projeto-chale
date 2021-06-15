@@ -92,6 +92,7 @@ Para lançar o commit e seu título
 git log
 ```
 Para verificar o histórico de commits
+<<<<<<< HEAD
 
 # Como juntar commits ?
 Antes de tudo `git log`para ver quais commits eu tenho. Achei os commits q quero juntar ? Sim, pego a hash deles.
@@ -101,4 +102,6 @@ Ex.:
     Mole. `git log` vejo as hashs que quero juntar. 
     Dou `git rebase -i HEAD~2`(rebase além de juntar branchs tb serve para trabalhar com histórico), isso vai mostrar os dois últimos em uma tela, lá terá as opções de como posso juntá-los.
     Defino como um commit será ajustado em relação ao outro e, se estiver usando o vi, ao final da página insiro `:wq` para editar a mensagem do commit. Se estiver usando o nano ^x, y, enter. Com o nano para fechar a união dos commits uso `git rebase --continue`para editar a mensagem, se for o caso, e fechar o commit.
+=======
+>>>>>>> a067b0f6491f1ffed988fdc0ab75580bf6fd5b6a
          
