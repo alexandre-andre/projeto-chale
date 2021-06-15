@@ -21,10 +21,10 @@ Então seguindo a lógica:
 
 2 - Com -> Reset (melhor opção para usar em branch fora do master)
 
-git reset --hard <numero da log>
+git reset --hard <numero da hash>
 Volta para o commit tal e ignora -apaga- todos os commits após este
 
-git reset --soft <numero da log>
+git reset --soft <numero da hash>
 Volta para o commit tal e todos os commits q fora mudados após este voltam para a área de standing
 
 # Como editar o título do último commit ? (antes do push)
@@ -40,5 +40,17 @@ git add <nome do arquivo>
 git commit --amend 
 
 # Como sei que foi anexado a mudança ?
-git log - para ver o log do commit
-git show <log do commit> para mostrar a alteração 
+git log - para ver o hash do commit
+git show <hash do commit> para mostrar a alteração 
+
+# Como pegar um commit específico de um branch e por no meu ?
+git cherry-pick <hash>
+    O git cherry-pick <hash> pega um commit de uma determinada branch e copia para a branch que eu quiser add o commit. Essa cópia de commit vai trazer copiar tudo, mas caso exista algum conflito em alguma linha, eu tenho de resolver.
+    Git cherry-pick <hash> é interessante pq não precisa usar merge, ela faz a mesma coisa sem alterar o histórico. 
+
+Ex.:
+git checkout - <nome da branch>
+git log (para ver os hash dos commits)
+    seleciona a hash desejada
+git cherry-pick <hash>
+
