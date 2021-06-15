@@ -54,3 +54,42 @@ git log (para ver os hash dos commits)
     seleciona a hash desejada
 git cherry-pick <hash>
 
+# Commitar trecho específico
+git add -p
+
+    Mesmo que seja no mesmo arquivo é possível fazer commits separados.
+
+Ex.:
+Em um arquivo tal faço 1 alteração salvo, depois faço mais uma alteração e salvo de novo. Para fazer um commit para cada alteração faço:
+-->git add -p 
+Vai dar o commit 1.
+Vai entrar na tela de separação de alterações. Irão aparecer as alterações separadamente. Primeiro vai aparecer minha primeira alteração e o que desejo fazer, depois disso vai aparecer minha segunda alteração e o que desejo fazer.
+
+-->git status 
+Vai mostrar o status das alterações na branch
+
+-->git show
+Vai mostrar o que foi alterado
+
+-->git commit -m <"..."> 
+Vai titular o commit 1
+
+Se eu der "git log" vai mostrar o histórico dos commits, lá vou ver que apenas o commit 1 foi lançado, enquanto que o 2 está esperando aprovação.
+
+Daí posso lançar:
+--> git add <arquivo a ser commitado>
+Que será a segunda alteração feita no mesmo arquivo e lançada como outro commit.
+
+```shell
+git status
+```
+Para verificar o arquivo
+
+`git commit -m <"...">`
+Para lançar o commit e seu título
+
+```
+git log
+```
+Para verificar o histórico de commits
+         
