@@ -2,4 +2,5 @@
 
 txt pelo git
 
-git é dado para tornar um "arquivo" git
+git init é dado uma única vez e é dado para tornar um "arquivo" git
+
