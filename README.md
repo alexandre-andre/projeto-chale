@@ -125,3 +125,66 @@ Lmebrando que para ver o histórico e a hash de um commit damos `git log`.   git
     git log (para ver a hash do commit anterior a "a", que foi o primeiro)
     git rebase -i --autosquash <hash do commit anterior a "a">
             (dessa maneira vamos pegar o "a" e seus fixup e fazer um autosquash)
+
+# Resolvendo conflitos na mao
+    Situcao hipotetica:
+    Fiz x alteracoes no meu vscode e um colega de trabalho fex y alteracoes na plataforma git. Ao puxar os arquivos para o meu repositorio local, ("git pull <remoto> <local>"), pode haver conflitos entre as alteracoes realizadas, apos a resolucao dos conflitos, usamos o comando `git merge --continue`, para mesclar as alteracoes e estando ok `git push <local> <remoto>`
+
+# Usando autocorrect
+Parra corrigir erros de digitacao nos comandos do git.
+
+`git config --global help.autocorrect 1` ou `git config --global hep.autocorrect true`
+
+# Como zipar um repositorio
+`git archive <branch> --format=zip --output=<nomedoarquivo.Zip>`
+
+Ex.: Transformando a branch master em um arquivo zip
+`git archive master --format=zip --output=master.zip` 
+
+Zipa todo um repositorio
+
+# Git Log - mudando visual
+`git log --pretty=oneline`
+Deixa o hash e a informacao de commit em uma linha so
+
+`git log --pretty=oneline --graf`
+Mostra o historico de mudancas por branchs nos commits pretty=oneline
+
+`git log --pretty=oneline --grahistoricof --all`
+Mostra todo o historio dos branchs nos hashs, incluindo o stash
+
+# Filtros no Git Log
+`git log --since=<data(Jan 1 2018)>`
+Vai listar todos os logs DESDE o dia 1 de janeiro de 2018
+
+`git log --until=<data(jan 1 2018)>`
+Vai listar todos os logs ATE o dia 1 de janeiro de 2018
+
+`git log --since=<data(Jan 1 2018) --until=<data(Jan 10 2020)>`
+Vai listar os logs DESDE o dia tal ATE o dia tal
+
+`git log --author=<name>`
+Todos os commit do autor x
+
+`git shortlog`
+Vai mostrar o autor e todos os commits 
+
+`git shorlog -sn`
+Mostra a quantidade de commits e seu autor
+
+`git log -3`
+Vai mostrar os 3 ultimos commits
+
+# GIT REFLOG - o salvador
+`git reflog`
+Mostra todos os tipos de alteracoes realizadas no repositorio, com ele e possivel recuperar hashs deletadas e traze-las de volta a vida.
+
+```shell
+Situacao:
+`git reset --hard <hash>` 
+`git reflog` vamos quem vc quer salvar e trazer de volta a vida, pega o hash dele taca no reset --hard (reset do reset)
+`git reset --hard <hash>`
+
+
+
+
