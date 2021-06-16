@@ -93,12 +93,35 @@ git log
 ```
 Para verificar o histórico de commits
 
-# Como juntar commits ?
-Antes de tudo `git log`para ver quais commits eu tenho. Achei os commits q quero juntar ? Sim, pego a hash deles.
+# Como juntar commits por interatividade ?
+`git rebase -i -HEAD~<posição do commit a ser juntado>`
+
+Antes de tudo `git log`para ver quais commits eu tenho. Achei os commits q quero juntar ? Sim, dou `git rebase -i -HEAD~2`(onde, `-i`quer dizer que o rebase é interativo e `-HEAD~2`quer dizer que escolhi o commit que está no HEAD e o segundo).
 
 Ex.: 
     Como juntar 2 commits que estão no histórico e não sei quais são?
     Mole. `git log` vejo as hashs que quero juntar. 
     Dou `git rebase -i HEAD~2`(rebase além de juntar branchs tb serve para trabalhar com histórico), isso vai mostrar os dois últimos em uma tela, lá terá as opções de como posso juntá-los.
-    Defino como um commit será ajustado em relação ao outro e, se estiver usando o vi, ao final da página insiro `:wq` para editar a mensagem do commit. Se estiver usando o nano ^x, y, enter. Com o nano para fechar a união dos commits uso `git rebase --continue`para editar a mensagem, se for o caso, e fechar o commit.
-         
+    Defino como um commit será ajustado em relação ao outro e, se estiver usando o vi, ao final da página insiro `:wq` para editar a mensagem do commit, já se estiver usando o nano, ^x, y, enter. Com o nano para fechar a união dos commits uso `git commit --amend` para editar a mensagem do commit, se for o caso, e fechá-lo. Deu Kaô ? `git rebase --continue` ou `git --edit-todo`.
+
+# Como juntar commits com Fixup e Autoquash ?
+`git commit -fixup <hash do commit corrigido>
+
+O que isso quer dizer?
+Fiz um commit (sem dar push), logo em seguida fiz outro consertando o anterior.
+    `git log` para ver a hash do commit a ser corrido
+    `git add <. ou arquivo>`
+    `git commit -fixup` <hash do commit q foi corrigido>
+Lmebrando que para ver o histórico e a hash de um commit damos `git log`.   git log
+
+    Simulação:
+    git add .
+    git commit -m "a"
+    git add .       (consertei commit a e add algo)
+    git commit --fixup <hash de a>
+    git add .       (consertei commit ab e add algo)
+    git commit --fixup <hash de ab>
+    Mas agora eu tenho 3 commits de um mesmo trecho, como juntá-los em um só?
+    git log (para ver a hash do commit anterior a "a", que foi o primeiro)
+    git rebase -i --autosquash <hash do commit anterior a "a">
+            (dessa maneira vamos pegar o "a" e seus fixup e fazer um autosquash)
