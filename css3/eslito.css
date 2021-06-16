@@ -41,7 +41,7 @@ body{
 	background: url(../imagens/logo.png) no-repeat;
 	width: 151px;
 	height: 66px;
-	text-indent: -30000px;/*para tirar CHALÉ HOTEL da tela*/
+	text-indent: -4000px;/*para tirar CHALÉ HOTEL da tela*/
 }
 
 #menu{
