@@ -8,7 +8,7 @@ body{
 	background: #fff url(../imagens/bg.png);
 	margin: 15px;
 }
-/************************************/
+/**************PRINCIPAL**********************/
 #container{
 	background: #ede9cc url(../imagens/bg-container.png) repeat-y top center;
 	margin: 0 auto;
@@ -82,7 +82,7 @@ body{
 	text-transform: uppercase;
 	padding: 5px 10px;
 }
-/********MENU LATERAL e depoimento***************/
+/************************MENU LATERAL e depoimento***************/
 #menu-lateral{
 	margin-top: 15px;
 }
@@ -119,7 +119,7 @@ body.contato #navegacao a#contato{
 	background-color: #fdf6be; 
 }
 
-/*************AREA PRINCIPAL***********************/
+/**************************AREA PRINCIPAL***********************/
 #area-principal{
 	float: left;
 	width: 50%;
@@ -143,7 +143,7 @@ p{
 	margin-bottom: 10px;
 }
 
-/********AREA LATERAL***********************/
+/**************************AREA LATERAL***********************/
 #area-lateral{
 	float: right;
 	width: 50%;
