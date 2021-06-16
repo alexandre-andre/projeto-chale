@@ -8,11 +8,7 @@ body{
 	background: #fff url(../imagens/bg.png);
 	margin: 15px;
 }
-<<<<<<< HEAD
 /**************PRINCIPAL**********************/
-=======
-/**************/
->>>>>>> 922f1b62f0ab097d5f3076059044bffbeded57a0
 #container{
 	background: #ede9cc url(../imagens/bg-container.png) repeat-y top center;
 	margin: 0 auto;
@@ -86,11 +82,7 @@ body{
 	text-transform: uppercase;
 	padding: 5px 10px;
 }
-<<<<<<< HEAD
 /************************MENU LATERAL e depoimento***************/
-=======
-/************/
->>>>>>> 922f1b62f0ab097d5f3076059044bffbeded57a0
 #menu-lateral{
 	margin-top: 15px;
 }
@@ -127,11 +119,7 @@ body.contato #navegacao a#contato{
 	background-color: #fdf6be; 
 }
 
-<<<<<<< HEAD
 /**************************AREA PRINCIPAL***********************/
-=======
-/***********PRINCIPAL***********************/
->>>>>>> 922f1b62f0ab097d5f3076059044bffbeded57a0
 #area-principal{
 	float: left;
 	width: 50%;
@@ -155,11 +143,7 @@ p{
 	margin-bottom: 10px;
 }
 
-<<<<<<< HEAD
 /**************************AREA LATERAL***********************/
-=======
-/*******LATERAL***********************/
->>>>>>> 922f1b62f0ab097d5f3076059044bffbeded57a0
 #area-lateral{
 	float: right;
 	width: 50%;
