@@ -187,4 +187,140 @@ Situacao:
 
 
 
+Comentar e fechar uma issue
+
+No comentario "#" darah opcao de refenciar tal issue gerando um link de fechamento apos conclusao da issue
+
+Ao final do comentario a inclusao de "-Closes #1,2 ou 3" referenciaara tal issue a ser finalizada
+
+
+Pull Request
+Nada mais he do que um commit separado que faz alusao ao master
+
+
+issue sao os comentarios e resolucoes e pull request eh o pedido ou inclusao da solucao
+
+
+
+Criando tabela em um comentario
+
+|titulo1|titulo2|
+|-------|-------|
+|link1|link2|
+
+
+O que eh e quais sao os workflows  do git ?
+Workflow eh passo-a-passo das tarefas no git do desenvolvimento a producao.
+
+- Centralized Workflow
+- Featrure Branch Workflow
+- Gitflow Workflow
+
+--Centralized Workflow
+ Funciona com um branch soh.
+ Funciona com equipe pequena - por causa de facilidade de conflitos
+ Eh necessario sempre ficar dando git pull e mais ainda git gull <remoto> <local> --rebase
+ Pq ? 
+ Pq o git pull --rebase leva a ultima alteracao pra cima do historico.
+ (ex.: a finalizou sua feature e commitou, b apos a terminou sua feature e commitou. Mesmo que nao haja confloto vai dar ruim pq aconteceu uma mudanca antes, b tem d baixar `git pull <remoto> <local> --rebase, para trazer as alteracoes de a para dps colocar as suas, assim ela fica no topo das mudancas)
+
+
+
+--Feature Branch Workflow
+ Um branch para cada feature.
+ Quando a feature estah pronta daih sim pull request pro master.
+ O Pull request passando pelo code review, estando tudo ok faz um maerge pro master.
+ Evita conflitos e e permite trabalhos paralelos. (sempre tem de manter seu master atualizado)
+ 
+
+-- Git Flow
+ Trabalha tanto em repositorio novos quanto ja existentes.
+
+ `git flow init`
+ Dai pergunta qual sera o branch padra o de producao [master]
+ qual sera o branch de desenvolimento [develop]
+ qual sera os prefixos:
+   para branch de feature [feature/]
+   para branch de release[release/]
+   para branch de hotfix [hotfix/]
+   para branch de support [support/]
+   para branch de tag [ ] (pode ser definido conforme necessario
+
+ Apos esses primeiros passos ja cai direto na branch develop
+
+ como a primeira feature sera a index
+ -> `git flow feature start <nome da feature (update-contact)>` <-
+ Vai trocar para a nova branch (update-contact)
+ Pode comecar a commitar na branch,
+ -> git add . <-
+ -> git commit -m <"mensagem"> <-
+ Finalizada as acoes, para subir para o git hub para pedir pull request
+ -> git flow feature publish <nome da feature (update-contact> <-
+ Pq publish ?
+ Pq a feature vai para avaliacao para posterior publicacao.
+
+ Atencao:
+ Pelo git flow devemos sempre dar o pull request para o develop, NAO para o master.
+ Entao, no git hub, ao criar o pull request haverah  duas abas: base e compare.
+ A aba compare vai jogar a feature que pediu o pull request (update-contact).
+ A aba base, sempre sera o develop.
+ Se a branch develop nao estiver dispinivel, eh pq ainda nao foi dado push nela do terminal para o github. Como resolver ? 
+ Mole. 
+ -> git checkout develop <- para entrar na branch develop
+ -> git push origin develop <- para subir a branch develop para o github
+
+ Criado o pull request:
+ Passa pelo code review.
+ Estando tudo certo, volto para o terminal. 
+
+ ->git checkout - <- para voltar a branch anterior
+ -> git flow feature finish <nome da feature (update-contact)) <- 
+ Pq finish ?
+ Pq agora a feature esta finalizada, ja foi avaliada (publish) e pronta para ser publicada (finish).
+
+ Feito isso, o git flow mergea a feature com o delevop, remove a branch de desenvolvimento (update-contact) e entra na branch develop.
+ Dai na develop, com tudo certo, damos o push
+ -> git push origin develop <-
+ Pronto, mergeado. Apos isso, nao esquecer de deletar o branch de desenvolimento concluido do repositorio remoto. Dando refresh no pull request, vai aparecer a opcao de deletar a branch e tchau.
+
+
+ Criando um RELEASE:
+ Release eh jogar para producao, ou seja, do develop para o master.
+
+ -> git flow release start <nome do release (em geral por versao)> <-
+ Estando tudo pronto.
+ -> git flow release finish <nome do release> <-
+ Dai vai criar um commit de merge com descricao e mensagem, depois pede uma mensagem de tag, dem geral essa mensagem de tag eh o nome do release.
+ <- git push origin master --tag <-
+ Vai jogar tudo para o master, release e tag.
+ Tambem tem d ir ao develop e dar git push para mante-lo atualizado.
+ <- git push origin delevop <-
+
+
+ Trabalho rodando, tudo ok, PAH... tem bug.
+ Criamos um HOTFIX.
+ -> git flow hotfix star fix-<nome do fix> <-
+ Apos a correcao
+ -> git add <-
+ -> git commit -m <mensagem> <-
+ -> git flow hotfix finish <nome do hotfix) <-
+ Dai vai dar merge, mostrar as mudancas e a mensagem, vai pedir a mensagem pra tag e vai apagar o hotfix.
+ 
+ Feito isso voltemos ao master.
+ -> git checkout master <-
+ -> git push origin master --tags <-
+ Vai subir geral, mudanca e fix.
+
+
+ GH-PAGES
+ PAGINA NO GITHUB
+ -> git checkout -b gh-pages <-
+ -> git push origin gh-pages <-
+ Vai botar no ar um site utilizando o github.
+
+
+`git checkout master`
+`git checkout -b <branch>`
+
+
 
